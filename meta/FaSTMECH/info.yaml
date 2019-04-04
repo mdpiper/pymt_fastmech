@@ -1,0 +1,12 @@
+summary:
+  FaSTMECH (Flow and Sediment Transport with Morphological Evolution
+  of CHannels) is a quasi-steady two- and three-dimensional river
+  flow and morphodynamics solver developed by Dr. Jonathan Nelson of
+  the U.S. Geological Survey (USGS). The present version of the
+  model is equipped with a Basic Model Interface developed by Rich
+  McDonald (USGS).
+url: https://github.com/csdms-contrib/fastmech
+author: Rich McDonald
+email: rmcd@usgs.gov
+version: 0.1
+license: MIT
