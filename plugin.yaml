@@ -19,7 +19,6 @@ plugin:
   name: fastmech
   requirements:
   - fastmech
-  - iriclib
-  - cgns
-  - hdf5
-  - zlib
+  - iriclib==3.0=2
+  - cgns=3.2.1
+  - hdf5=1.8.20
