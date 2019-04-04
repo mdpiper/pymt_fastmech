@@ -22,18 +22,16 @@ requirements:
     - numpy 1.11.*
     - model_metadata
     - fastmech 
-    - iriclib 
-    - cgns 
-    - hdf5 
-    - zlib 
+    - iriclib==3.0=2 
+    - cgns=3.2.1 
+    - hdf5=1.8.20 
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - fastmech 
-    - iriclib 
-    - cgns 
-    - hdf5 
-    - zlib 
+    - iriclib==3.0=2 
+    - cgns=3.2.1 
+    - hdf5=1.8.20 
 
 test:
   requires:

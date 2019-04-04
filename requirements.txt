@@ -1,4 +1,7 @@
 cython
 numpy
 model_metadata
-fastmechiriclibcgnshdf5zlib
+fastmech
+iriclib==3.0=2
+cgns=3.2.1
+hdf5=1.8.20
