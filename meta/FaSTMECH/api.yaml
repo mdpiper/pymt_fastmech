@@ -1,0 +1,4 @@
+name: fastmech
+language: fortran
+package: fastmech
+class: FaSTMECH

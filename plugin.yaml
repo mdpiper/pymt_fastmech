@@ -1,0 +1,25 @@
+build:
+  define_macros: []
+  extra_compile_args: []
+  include_dirs: []
+  libraries: []
+  library_dirs: []
+  undef_macros: []
+info:
+  github_username: mdpiper
+  plugin_author: Mark Piper
+  plugin_license: MIT
+  summary: PyMT plugin for FaSTMECH
+library:
+  entry_point:
+  - FaSTMECH=bmifastmech:bmi_fastmech
+  language: fortran
+  register: ''
+plugin:
+  name: fastmech
+  requirements:
+  - fastmech
+  - iriclib
+  - cgns
+  - hdf5
+  - zlib

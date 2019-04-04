@@ -1,0 +1,53 @@
+{% set data = load_setup_py_data() %}
+
+package:
+  name: "pymt_fastmech"
+  version: {{ data.get('version') }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('fortran') }}
+  host:
+    - python
+    - pip
+    - cython
+    - numpy 1.11.*
+    - model_metadata
+    - fastmech 
+    - iriclib 
+    - cgns 
+    - hdf5 
+    - zlib 
+  run:
+    - python
+    - {{ pin_compatible('numpy') }}
+    - fastmech 
+    - iriclib 
+    - cgns 
+    - hdf5 
+    - zlib 
+
+test:
+  requires:
+    - bmi-tester
+    - model_metadata
+  imports:
+    - pymt_fastmech
+  commands:
+    - config_file=$(mmd-stage FaSTMECH . > MANIFEST && mmd-query FaSTMECH --var=run.config_file.path)
+    - bmi-test pymt_fastmech.bmi:FaSTMECH --config-file=$config_file --manifest=MANIFEST -v
+
+about:
+  summary: Python package that wraps the fastmech BMI.
+  home: https://github.com/mdpiper/pymt_fastmech
+  license: MIT license
+  license_file: LICENSE
+  dev_url: https://github.com/mdpiper/pymt_fastmech
