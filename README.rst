@@ -4,7 +4,7 @@ pymt_fastmech
 
 
 .. image:: https://img.shields.io/badge/CSDMS-Basic%20Model%20Interface-green.svg
-        :target: https://bmi-forum.readthedocs.io/
+        :target: https://bmi.readthedocs.io/
         :alt: Basic Model Interface
 
 .. image:: https://img.shields.io/badge/recipe-pymt_fastmech-green.svg
@@ -30,11 +30,12 @@ PyMT plugin for FaSTMECH
 
 
 
-========= =======================================
+
+========= ===================================
 Component PyMT
-========= =======================================
-FaSTMECH  `from pymt.components import FaSTMECH`
-========= =======================================
+========= ===================================
+FaSTMECH  `from pymt.models import FaSTMECH`
+========= ===================================
 
 ---------------
 Installing pymt
