@@ -1,0 +1,8 @@
+cgns_input_file:
+  description:
+    The path to a CGNS-format file containing model run parameters for
+    FaSTMECH
+  value:
+    type: string
+    default: ''
+    units: '-'
