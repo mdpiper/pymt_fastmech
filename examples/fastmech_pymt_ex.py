@@ -16,12 +16,11 @@ for name in m.output_var_names:
     print(' - {}'.format(name))
 
 # Call setup to get default config and data files.
-defaults = m.setup('.')
+defaults = m.setup('.', cgns_input_file='Test1.cgn')
 print('Setup:')
 for item in defaults:
     print(' - {}'.format(item))
 
 # Initialize the model with the defaults.
-# m.initialize(*defaults) -> segfault
+# m.initialize(*defaults) -> grid type error 'structured_quadrilateral'
 # m.initialize('') -> segfault
-# m.initialize('Test1.cgn') -> grid type error 'structured_quadrilateral'
