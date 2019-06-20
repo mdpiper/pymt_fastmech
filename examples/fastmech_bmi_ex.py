@@ -4,6 +4,9 @@ import numpy as np
 from pymt_fastmech import FaSTMECH
 
 
+np.set_printoptions(formatter={'float': '{: 8.1f}'.format})
+
+
 # Instantiate a model and get its name.
 m = FaSTMECH()
 print(m.get_component_name())
@@ -45,13 +48,10 @@ print(' - spacing: n/a')
 print(' - origin: n/a')
 grid_x = np.empty(grid_size, dtype=np.float64)
 m.get_grid_x(grid_id, grid_x)
-print(' - x:', grid_x)
+print(' - x nodes:', grid_x)
 grid_y = np.empty(grid_size, dtype=np.float64)
 m.get_grid_y(grid_id, grid_y)
-print(' - y:', grid_y)
-grid_z = np.empty(grid_size, dtype=np.float64)
-m.get_grid_z(grid_id, grid_z)
-print(' - z:', grid_z)
+print(' - y nodes:', grid_y)
 print(' - variable type:', m.get_var_type(var_name))
 print(' - units:', m.get_var_units(var_name))
 print(' - itemsize:', m.get_var_itemsize(var_name))
@@ -71,6 +71,7 @@ m.update_until(5.0)
 print(' - current time:', m.get_current_time())
 
 # Get the WaterSurfaceElevation values.
+print('Get values for {}:'.format(var_name))
 val = np.empty(grid_size, dtype=np.float64)
 m.get_value(var_name, val)
 print(' - values (streamwise):')
