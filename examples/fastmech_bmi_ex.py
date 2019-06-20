@@ -79,6 +79,18 @@ print(val)
 print(' - values (gridded):')
 print(val.reshape(np.roll(grid_shape, 1)))
 
+# Set new WaterSurfaceElevation values.
+print('Set new values for {}:'.format(var_name))
+new = np.arange(grid_size, dtype=np.float64)
+print(' - new values (streamwise):')
+print(new)
+m.set_value(var_name, new)
+check = np.empty(grid_size, dtype=np.float64)
+m.get_value(var_name, check)
+print(' - check new values (set/get, streamwise):')
+print(check)
+print(' - are new and check the same?', np.array_equal(new, check))
+
 # Finalize the model.
 m.finalize()
 print('Done.')
