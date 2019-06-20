@@ -68,7 +68,15 @@ print(' - current time:', m.get_current_time())
 
 # Advance the model until a later time.
 m.update_until(5.0)
-print('Current time:', m.get_current_time())
+print(' - current time:', m.get_current_time())
+
+# Get the Depth values.
+val = np.empty(grid_size, dtype=np.float64)
+m.get_value(var_name, val)
+print(' - values (streamwise):')
+print(val)
+print(' - values (gridded):')
+print(val.reshape(np.roll(grid_shape, 1)))
 
 # Finalize the model.
 m.finalize()
