@@ -28,7 +28,7 @@ print('Time units:', m.get_time_units())
 
 # Get the grid_id for the Depth variable.
 var_name = 'Depth'
-print('Variable {}'.format(var_name))
+print('Variable: {}'.format(var_name))
 grid_id = m.get_var_grid(var_name)
 print(' - grid id:', grid_id)
 
@@ -57,5 +57,19 @@ print(' - units:', m.get_var_units(var_name))
 print(' - itemsize:', m.get_var_itemsize(var_name))
 print(' - nbytes:', m.get_var_nbytes(var_name))
 
+# Advance the model by one time step.
+m.update() # spin up?
+m.update()
+print(' - current time:', m.get_current_time())
+
+# Advance the model by a fractional time step.
+# m.update_frac(0.75)
+# print(' - current time:', m.get_current_time())
+
+# Advance the model until a later time.
+m.update_until(5.0)
+print('Current time:', m.get_current_time())
+
 # Finalize the model.
 m.finalize()
+print('Done.')
