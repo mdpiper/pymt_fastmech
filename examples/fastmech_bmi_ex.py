@@ -26,13 +26,13 @@ print('Current time:', m.get_current_time())
 print('Time step:', m.get_time_step())
 print('Time units:', m.get_time_units())
 
-# Get the grid_id for the Depth variable.
-var_name = 'Depth'
+# Get the grid_id for the WaterSurfaceElevation variable.
+var_name = 'WaterSurfaceElevation'
 print('Variable: {}'.format(var_name))
 grid_id = m.get_var_grid(var_name)
 print(' - grid id:', grid_id)
 
-# Get grid and variable info for Depth.
+# Get grid and variable info for WaterSurfaceElevation.
 print(' - grid type:', m.get_grid_type(grid_id))
 grid_rank = m.get_grid_rank(grid_id)
 print(' - rank:', grid_rank)
@@ -70,7 +70,7 @@ print(' - current time:', m.get_current_time())
 m.update_until(5.0)
 print(' - current time:', m.get_current_time())
 
-# Get the Depth values.
+# Get the WaterSurfaceElevation values.
 val = np.empty(grid_size, dtype=np.float64)
 m.get_value(var_name, val)
 print(' - values (streamwise):')
