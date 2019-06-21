@@ -79,6 +79,16 @@ print(val)
 print(' - values (gridded):')
 print(val.reshape(np.roll(grid_shape, 1)))
 
+# Get a reference to the WaterSurfaceElevation values and check that it updates.
+print(' - values (by ref, streamwise) at time {}:'.format(m.get_current_time()))
+ref = m.get_value_ptr(var_name)
+print(ref)
+print(' - are val and ref the same? (True)', np.array_equal(val, ref))
+m.update()
+print(' - values (by ref, streamwise) at time {}:'.format(m.get_current_time()))
+print(ref)
+print(' - are val and ref the same? (False)', np.array_equal(val, ref))
+
 # Set new WaterSurfaceElevation values.
 print('Set new values for {}:'.format(var_name))
 new = np.arange(grid_size, dtype=np.float64)
