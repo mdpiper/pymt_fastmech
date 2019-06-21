@@ -22,5 +22,38 @@ for item in defaults:
     print(' - {}'.format(item))
 
 # Initialize the model with the defaults.
-# m.initialize(*defaults) -> grid type error 'structured_quadrilateral'
-# m.initialize('') -> segfault
+m.initialize(*defaults)
+
+# Display the start, end, and current model time, as well as time step and units.
+print('Start time: {}'.format(m.start_time))
+print('End time: {}'.format(m.end_time))
+print('Current time: {}'.format(m.time))
+print('Time step: {}'.format(m.time_step))
+print('Time units: {}'.format(m.time_units))
+
+# Update the model state.
+print('Update the model state...')
+m.update()
+print('Current time: {}'.format(m.time))
+
+# Get the water surface elevation at this time.
+var_name = 'WaterSurfaceElevation'
+elev = m.var[var_name].data
+units = m.var[var_name].units
+print('Water surface elevation ({}):'.format(units))
+print(elev)
+
+# Advance the model to the end.
+print('Run the model to the end...')
+m.update_until(m.end_time)
+print('Current time: {}'.format(m.time))
+
+# Get the water surface elevation.
+elev = m.var[var_name].data
+units = m.var[var_name].units
+print('Water surface elevation ({}):'.format(units))
+print(elev)
+
+# Finalize the model.
+m.finalize()
+print('Done.')
