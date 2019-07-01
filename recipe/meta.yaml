@@ -32,14 +32,14 @@ requirements:
     - hdf5=1.8.20 
 
 test:
-  requires:
-    - bmi-tester
-    - model_metadata
+  # requires:
+  #   - bmi-tester
+  #   - model_metadata
   imports:
     - pymt_fastmech
-  commands:
-    - config_file=$(mmd-stage FaSTMECH . > MANIFEST && mmd-query FaSTMECH --var=run.config_file.path)
-    - bmi-test pymt_fastmech.bmi:FaSTMECH --config-file=$config_file --manifest=MANIFEST -v
+  # commands:
+  #   - config_file=$(mmd-stage FaSTMECH . > MANIFEST && mmd-query FaSTMECH --var=run.config_file.path)
+  #   - bmi-test pymt_fastmech.bmi:FaSTMECH --config-file=$config_file --manifest=MANIFEST -v
 
 about:
   summary: Python package that wraps the FaSTMECH BMI.
