@@ -77,7 +77,7 @@ be installed with:
 
 .. code::
 
-  conda install fastmech iriclib==3.0=2 cgns=3.2.1 hdf5=1.8.20
+  conda install fastmech iriclib=0.1 cgns=3.2.1 hdf5=1.8.20
 
 To install `pymt_fastmech`,
 
