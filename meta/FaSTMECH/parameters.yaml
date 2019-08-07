@@ -185,7 +185,7 @@ start_iteration:
       min: 0
       max: 1000000
     units: '-'
-stop_iteration:
+end_iteration:
   description:
     Iteration to end change (needed for lev_type == 1)
   value:
