@@ -19,8 +19,8 @@ print('Output variable names:')
 for name in m.get_output_var_names():
     print(' - {}'.format(name))
 
-# Initialize the model with a config file that points to a CGNS file.
-m.initialize('fastmech.cfg')
+# Initialize the model with settings from a text config file.
+m.initialize('fastmech_default.cfg')
 
 # Get time information from the model.
 print('Start time:', m.get_start_time())

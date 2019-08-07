@@ -15,14 +15,17 @@ print('Output variable names:')
 for name in m.output_var_names:
     print(' - {}'.format(name))
 
-# Call setup to get default config and data files.
-defaults = m.setup('.', cgns_input_file='Test1.cgn')
+# Call setup to get default config file.
+defaults = m.setup('.')
 print('Setup:')
 for item in defaults:
     print(' - {}'.format(item))
 
-# Initialize the model with the defaults.
+# Initialize the model.
 m.initialize(*defaults)
+# m.initialize(fname='', dir='.')             # with the BMI defaults
+# m.initialize(fname='fastmech_default.cfg')  # with a config file
+# m.initialize(fname='Test1.cgn', dir='.')    # directly with a CGNS file
 
 # Display the start, end, and current model time, as well as time step and units.
 print('Start time: {}'.format(m.start_time))
