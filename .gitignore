@@ -103,3 +103,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# CSDMS componenentizing
+pymt_fastmech/lib/fastmech.c
