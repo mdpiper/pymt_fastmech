@@ -557,7 +557,7 @@ solution_parameters__arelax:
     units: '-'
 
 # 2d solution output
-2d_solution_output__velocitysn:
+twod_solution_output__velocitysn:
   description:
     Output velocity (streamwise and normal relative to grid) (F = no;
     T = yes)
@@ -565,14 +565,14 @@ solution_parameters__arelax:
     type: string
     default: F
     units: '-'
-2d_solution_output__shearstressxy:
+twod_solution_output__shearstressxy:
   description:
     Output boundary shear stress (F = no; T = yes)
   value:
     type: string
     default: T
     units: '-'
-2d_solution_output__shearstresssn:
+twod_solution_output__shearstresssn:
   description:
     Output boundary shear stress (streamwise and normal relative to
     grid) (F = no; T = yes)
@@ -580,14 +580,14 @@ solution_parameters__arelax:
     type: string
     default: F
     units: '-'
-2d_solution_output__cd:
+twod_solution_output__cd:
   description:
     Output drag coefficient (F = no; T = yes)
   value:
     type: string
     default: F
     units: '-'
-2d_solution_output__area:
+twod_solution_output__area:
   description:
    Output area associated with each node (useful when calculating
    habitat params) (F = no; T = yes)
@@ -595,7 +595,7 @@ solution_parameters__arelax:
     type: string
     default: F
     units: '-'
-2d_solution_output__unit_discharge:
+twod_solution_output__unit_discharge:
   description:
    Output unit discharge (F = no; T = yes)
   value:
